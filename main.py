@@ -22,6 +22,7 @@ model.compile(optimizer='adam',
 model.fit(x_train, y_train, epochs=3)  # epochs =  how many times train over with that dataset
 
 val_loss,val_acc = model.evaluate(x_test,y_test)
+model.save('num_reader')
 print(val_loss,val_acc)
 # print(x_train[0])
 # plt.imshow(x_train[1], cmap=plt.cm.binary)
