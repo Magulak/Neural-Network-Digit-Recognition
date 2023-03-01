@@ -1,5 +1,6 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import numpy as np
 
 # https://www.youtube.com/watch?v=wQ8BIBpya2k
 
@@ -24,6 +25,9 @@ model.fit(x_train, y_train, epochs=3)  # epochs =  how many times train over wit
 val_loss,val_acc = model.evaluate(x_test,y_test)
 model.save('num_reader')
 print(val_loss,val_acc)
+predictions = model.predict([x_test])
+
+print(np.argmax(predictions[0]))
 # print(x_train[0])
 # plt.imshow(x_train[1], cmap=plt.cm.binary)
 # plt.show()
